@@ -43,17 +43,16 @@ class _HomeScreenState extends State<HomeScreen> {
             itemBuilder: (context, index) {
               return RecetaCard(
                 receta: recetas[index],
-                onTap: () async {
-                  // PARTE AGREGADA INICIA AQUÍ
-                  final bool? esFavorita = await Navigator.push(
+                onTap: () {
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
                           DetalleRecetaScreen(receta: recetas[index]),
-                    ), // MaterialPageRoute
+                    ),
                   );
-                }, // PARTE AGREGADA TERMINA AQUÍ
-              ); // RecetaCard
+                },
+              );
             },
           ); // ListView.builder // ListView.builder
         },
